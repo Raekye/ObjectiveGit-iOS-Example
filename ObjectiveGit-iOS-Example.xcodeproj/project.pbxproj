@@ -26,6 +26,9 @@
 		398F8B9B18319F1C0071359D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398F8B7318319F1C0071359D /* CoreData.framework */; };
 		398F8BA318319F1C0071359D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 398F8BA118319F1C0071359D /* InfoPlist.strings */; };
 		398F8BA518319F1C0071359D /* ObjectiveGit_iOS_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 398F8BA418319F1C0071359D /* ObjectiveGit_iOS_ExampleTests.m */; };
+		398F8BC51831BADB0071359D /* libObjectiveGit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 398F8BC21831B96B0071359D /* libObjectiveGit-iOS.a */; };
+		398F8BC71831BAE10071359D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 398F8BC61831BAE10071359D /* libz.dylib */; };
+		398F8BC91831BAE60071359D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 398F8BC81831BAE60071359D /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 398F8B6918319F1C0071359D;
 			remoteInfo = "ObjectiveGit-iOS-Example";
+		};
+		398F8BBB1831B96B0071359D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = ObjectiveGit;
+		};
+		398F8BBD1831B96B0071359D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88F05A6B16011E5400B7AD1D;
+			remoteInfo = ObjectiveGitTests;
+		};
+		398F8BBF1831B96B0071359D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04DB4645133AB57600D9C624;
+			remoteInfo = "ObjectiveGit-iOS";
+		};
+		398F8BC11831B96B0071359D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6CBB4A417FFD50500404926;
+			remoteInfo = "ObjectiveGit-iOS-arm64";
+		};
+		398F8BC31831BA830071359D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F6CBB45317FFD50500404926;
+			remoteInfo = "ObjectiveGit-iOS-arm64";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,6 +101,9 @@
 		398F8BA018319F1C0071359D /* ObjectiveGit-iOS-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveGit-iOS-ExampleTests-Info.plist"; sourceTree = "<group>"; };
 		398F8BA218319F1C0071359D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		398F8BA418319F1C0071359D /* ObjectiveGit_iOS_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveGit_iOS_ExampleTests.m; sourceTree = "<group>"; };
+		398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveGitFramework.xcodeproj; path = "objective-git/ObjectiveGitFramework.xcodeproj"; sourceTree = "<group>"; };
+		398F8BC61831BAE10071359D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		398F8BC81831BAE60071359D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +111,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				398F8BC91831BAE60071359D /* libiconv.dylib in Frameworks */,
+				398F8BC71831BAE10071359D /* libz.dylib in Frameworks */,
+				398F8BC51831BADB0071359D /* libObjectiveGit-iOS.a in Frameworks */,
 				398F8B7018319F1C0071359D /* CoreGraphics.framework in Frameworks */,
 				398F8B7418319F1C0071359D /* CoreData.framework in Frameworks */,
 				398F8B7218319F1C0071359D /* UIKit.framework in Frameworks */,
@@ -94,6 +138,7 @@
 		398F8B6118319F1C0071359D = {
 			isa = PBXGroup;
 			children = (
+				398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */,
 				398F8B7518319F1C0071359D /* ObjectiveGit-iOS-Example */,
 				398F8B9E18319F1C0071359D /* ObjectiveGit-iOS-ExampleTests */,
 				398F8B6C18319F1C0071359D /* Frameworks */,
@@ -113,6 +158,8 @@
 		398F8B6C18319F1C0071359D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				398F8BC81831BAE60071359D /* libiconv.dylib */,
+				398F8BC61831BAE10071359D /* libz.dylib */,
 				398F8B6D18319F1C0071359D /* Foundation.framework */,
 				398F8B6F18319F1C0071359D /* CoreGraphics.framework */,
 				398F8B7118319F1C0071359D /* UIKit.framework */,
@@ -169,6 +216,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		398F8BAF1831B96A0071359D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				398F8BBC1831B96B0071359D /* ObjectiveGit.framework */,
+				398F8BBE1831B96B0071359D /* ObjectiveGitTests.octest */,
+				398F8BC01831B96B0071359D /* libObjectiveGit-iOS.a */,
+				398F8BC21831B96B0071359D /* libObjectiveGit-iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +241,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				398F8BC41831BA830071359D /* PBXTargetDependency */,
 			);
 			name = "ObjectiveGit-iOS-Example";
 			productName = "ObjectiveGit-iOS-Example";
@@ -232,6 +291,12 @@
 			mainGroup = 398F8B6118319F1C0071359D;
 			productRefGroup = 398F8B6B18319F1C0071359D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 398F8BAF1831B96A0071359D /* Products */;
+					ProjectRef = 398F8BAE1831B96A0071359D /* ObjectiveGitFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				398F8B6918319F1C0071359D /* ObjectiveGit-iOS-Example */,
@@ -239,6 +304,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		398F8BBC1831B96B0071359D /* ObjectiveGit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveGit.framework;
+			remoteRef = 398F8BBB1831B96B0071359D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		398F8BBE1831B96B0071359D /* ObjectiveGitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ObjectiveGitTests.octest;
+			remoteRef = 398F8BBD1831B96B0071359D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		398F8BC01831B96B0071359D /* libObjectiveGit-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveGit-iOS.a";
+			remoteRef = 398F8BBF1831B96B0071359D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		398F8BC21831B96B0071359D /* libObjectiveGit-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libObjectiveGit-iOS.a";
+			remoteRef = 398F8BC11831B96B0071359D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		398F8B6818319F1C0071359D /* Resources */ = {
@@ -290,6 +386,11 @@
 			isa = PBXTargetDependency;
 			target = 398F8B6918319F1C0071359D /* ObjectiveGit-iOS-Example */;
 			targetProxy = 398F8B9C18319F1C0071359D /* PBXContainerItemProxy */;
+		};
+		398F8BC41831BA830071359D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveGit-iOS-arm64";
+			targetProxy = 398F8BC31831BA830071359D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
