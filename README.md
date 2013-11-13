@@ -1,7 +1,7 @@
 ObjectiveGit-iOS-Example
 ========================
 
-This is a quick guide on setting up ObjectiveGit for an iOS project.
+This is a quick guide on setting up ObjectiveGit for an iOS project. The example code clones a repository if it doesn't already exist, and displays the latest commit message. Don't expect much; it's only meant to get you started.
 
 ### Adding the ObjectiveGit framework to a new iOS project
 1. Create a new project on Xcode (make sure to check "initialize a git repository"). Do not use spaces in the project name; the `bootstrap` script for ObjectiveGit will not work with paths with spaces
@@ -24,6 +24,10 @@ This is a quick guide on setting up ObjectiveGit for an iOS project.
 1. In Xcode, choose "Open Other" and import the `.xcodeproj` file
 1. Everything else should already be set up
 
+### Notes
+- You may have to add `GTRepositoryCloneOptionsTransportFlags: @YES` to the options of `[GTRepository cloneFromURL:...]` to disable checking SSL certificates. [This appears to be an error on the iOS simulator][4]
+
 [1]: https://github.com/libgit2/objective-git
 [2]: http://brew.sh
 [3]: http://stackoverflow.com/questions/19324756/share-working-copy-in-xcode-when-adding-a-project-under-git-version-control
+[4]: https://github.com/libgit2/objective-git/pull/246

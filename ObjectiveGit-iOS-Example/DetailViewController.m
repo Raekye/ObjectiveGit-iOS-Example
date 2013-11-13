@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import <ObjectiveGit/ObjectiveGit.h>
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -36,7 +37,38 @@
     // Update the user interface for the detail item.
 
 	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+		GTRepository* repo = nil;
+		NSString* url = [self.detailItem valueForKey:@"gitURL"];
+		NSError* error = nil;
+		NSFileManager* fileManager = [NSFileManager defaultManager];
+		NSURL* appDocsDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+		NSURL* localURL = [NSURL URLWithString:url.lastPathComponent relativeToURL:appDocsDir];
+		
+		if (![fileManager fileExistsAtPath:localURL.path isDirectory:nil]) {
+			repo = [GTRepository cloneFromURL:[NSURL URLWithString:url] toWorkingDirectory:localURL options:@{GTRepositoryCloneOptionsTransportFlags: @YES} error:&error transferProgressBlock:^(const git_transfer_progress *progress) {
+				//
+			} checkoutProgressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
+				NSLog(@"%d/%d", completedSteps, totalSteps);
+			}];
+			if (error) {
+				NSLog(@"%@", error);
+			}
+		} else {
+			repo = [GTRepository repositoryWithURL:localURL error:&error];
+			if (error) {
+				NSLog(@"%@", error);
+			}
+			
+		}
+		GTReference* head = [repo headReferenceWithError:&error];
+		if (error) {
+			NSLog(@"%@", error.localizedDescription);
+		}
+		GTCommit* commit = [repo lookupObjectBySHA:head.targetSHA error:&error];
+		if (error) {
+			NSLog(@"%@", error.localizedDescription);
+		}
+		self.detailDescriptionLabel.text = [NSString stringWithFormat:@"Last commit message: %@", commit.messageSummary];
 	}
 }
 
@@ -68,5 +100,7 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
+
+#pragma mark - Helper functions
 
 @end
