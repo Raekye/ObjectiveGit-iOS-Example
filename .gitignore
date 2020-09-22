@@ -19,3 +19,7 @@ DerivedData
 
 #CocoaPods
 Pods
+
+#Cartage
+Carthage/Checkouts
+Carthage/Build

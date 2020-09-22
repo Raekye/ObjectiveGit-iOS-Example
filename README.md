@@ -18,10 +18,7 @@ This is a quick guide on setting up ObjectiveGit for an iOS project. The example
 
 ### Cloning/Using this project as a template
 1. `git clone ...`
-1. `git submodule update --init --recursive`
-1. `cd objective-git`
-1. `./script/bootstrap`
-1. In Xcode, choose "Open Other" and import the `.xcodeproj` file
+1. `carthage update`
 1. Everything else should already be set up
 
 ### Notes
