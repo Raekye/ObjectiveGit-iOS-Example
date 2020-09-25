@@ -45,11 +45,7 @@
 		NSURL* localURL = [NSURL URLWithString:url.lastPathComponent relativeToURL:appDocsDir];
 		
 		if (![fileManager fileExistsAtPath:localURL.path isDirectory:nil]) {
-			repo = [GTRepository cloneFromURL:[NSURL URLWithString:url] toWorkingDirectory:localURL options:@{GTRepositoryCloneOptionsTransportFlags: @YES} error:&error transferProgressBlock:^(const git_transfer_progress *progress) {
-				//
-			} checkoutProgressBlock:^(NSString *path, NSUInteger completedSteps, NSUInteger totalSteps) {
-				NSLog(@"%d/%d", completedSteps, totalSteps);
-			}];
+            repo = [GTRepository cloneFromURL:[NSURL URLWithString:url] toWorkingDirectory:localURL options:@{GTRepositoryCloneOptionsTransportFlags: @YES} error:&error transferProgressBlock:^(const git_transfer_progress *progress, BOOL *stop) {}];
 			if (error) {
 				NSLog(@"%@", error);
 			}
@@ -64,7 +60,7 @@
 		if (error) {
 			NSLog(@"%@", error.localizedDescription);
 		}
-		GTCommit* commit = [repo lookupObjectBySHA:head.targetSHA error:&error];
+        GTCommit* commit = [repo lookUpObjectByOID:head.targetOID error:&error];
 		if (error) {
 			NSLog(@"%@", error.localizedDescription);
 		}
